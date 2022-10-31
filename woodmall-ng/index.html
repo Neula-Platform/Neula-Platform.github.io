@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Neula based portal</title>
+    <script src="scripts.js" type="text/javascript"></script>
+    <link rel="stylesheet" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="text/javascript">
+        // Listen for messages sent from the iFrame
+        const eventMethod = window.addEventListener ? "addEventListener" : "attachEvent";
+        const eventer = window[eventMethod];
+        const messageEvent = eventMethod === "attachEvent" ? "onmessage" : "message";
+
+        eventer(messageEvent,function(e) {
+
+            // If the message is a resize frame request
+            if (e.data.indexOf('screenPortletResize::') !== -1) {
+                const height = e.data.replace('screenPortletResize::', '');
+                document.getElementById('enginePage').style.height = height+'px';
+            }
+
+            if(e.data.indexOf('screenPortletAttributeChanged::') !== -1) {
+                onScreenPortletAttributeChanged(JSON.parse(e.data.substring("screenPortletAttributeChanged::".length)));
+            }
+        } ,false);
+    </script>
+</head>
+<body>
+
+<h1>WoodMall</h1>
+
+<h1 id="welcome"></h1>
+
+<div class="navigation">
+    <button id="MainPage" onclick="openMainPage()">Strona główna</button>
+    <button id="NewsPage" disabled onclick="openNews()">Aktualności</button>
+    <button id="AuctionsPage" onclick="openAuctionsSearch()">Wyszukiwarka aukcji</button>
+    <button id="MyAccountPage" onclick="openMyAccountPage()">Moje konto</button>
+    <button id="NewAuction" onclick="openNewAuction()">Nowa aukcja</button>
+    <button id="Register" onclick="openRegister()">Zarejestruj się</button>
+    <button id="Login" onclick="openLogin()">Login</button>
+    <button id="Logout" onclick="logout()">Logout</button>
+    <button id="StatutePage" disabled onclick="openStatutePage()">Regulamin</button>
+    <button id="PrivacyPolicyPage" disabled onclick="openPrivacyPolicyPage()">Polityka prywatności</button>
+</div>
+
+<iframe id="enginePage" class="hidden"></iframe>
+
+</body>
+</html>
