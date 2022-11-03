@@ -1,4 +1,4 @@
-const engineMainUrl = "http://localhost:4200/#/";
+const engineMainUrl = "screens/#/";
 const functionsUrl = "https://woodmall.neula.cloud/api/functions/wood_auctions/"
 const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
 const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
