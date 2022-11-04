@@ -1,0 +1,13 @@
+{
+  "fileuploader_wrong_type_msg": "Niepoprawny format pliku [{{filetype}}], dozwolone formaty plików: {{allowedFiles}}.",
+  "fileuploader_unknown_type_msg": "Nieznany format, dozwolone formaty plików: {{allowedFiles}}.",
+  "fileuploader_empty_file": "Próba wgrania pustego pliku",
+  "fileuploader_too_large_file": "Wgrywany plik jest za wielki, dozwolona wielkość to {{size}}",
+  "fileuploader_unauthorized": "Brak autoryzacji",
+  "fileuploader_edit_authorization_error": "Brak uprawnień do edycji tego pliku",
+  "fileuploader_edit_uploaded_file": "Nowa wersja pliku aktualnie wgrywana",
+  "fileuploader_edit_locked_file": "Edycja pliku zablokowana",
+  "fileuploader_directory_authorization_error": "Brak uprawnień do zapisywania plików w tym folderze",
+  "fileuploader_name_not_allowed": "Błędna nazwa pliku",
+  "fileuploader_upload_new_version": "Plik o takiej samej nazwie już istnieje, czy chcesz wgrać jego nową wersję?"
+}

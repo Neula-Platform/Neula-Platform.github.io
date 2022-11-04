@@ -1,0 +1,13 @@
+{
+  "fileuploader_wrong_type_msg": "You are not allowed to upload file of type [{{filetype}}], allowed: {{allowedFiles}}.",
+  "fileuploader_unknown_type_msg": "You are not allowed to upload file of unknown type, allowed: {{allowedFiles}}.",
+  "fileuploader_empty_file": "You are not allowed to upload empty file",
+  "fileuploader_too_large_file": "File is too large, max allowed file size is {{size}}",
+  "fileuploader_unauthorized": "Unauthorized",
+  "fileuploader_edit_authorization_error": "You are not allowed to change this file",
+  "fileuploader_edit_uploaded_file": "File version upload already in progress",
+  "fileuploader_edit_locked_file": "File is locked for edition",
+  "fileuploader_directory_authorization_error": "You are not allowed to write in this directory",
+  "fileuploader_name_not_allowed": "File name not allowed",
+  "fileuploader_upload_new_version": "File with the same name already exists, do you want to upload it's new version?"
+}
