@@ -172,6 +172,7 @@ function updateButtonsVisibility() {
     showButton("Logout", loggedIn);
     showButton("Register", !loggedIn);
     showButton("MyAccountPage", loggedIn);
+    showButton("NewAuction", loggedIn);
 }
 
 function showButton(id, visible) {
