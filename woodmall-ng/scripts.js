@@ -1,5 +1,5 @@
 const engineMainUrl = "screens/#/";
-const functionsUrl = "https://woodmall.neula.cloud/api/functions/wood_auctions/"
+const functionsUrl = "https://woodmall.neula.cloud/api/functions/woodmall/"
 const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
 const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
 
@@ -83,7 +83,7 @@ function checkSession() {
 
 function openLogin() {
     const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "wood_auctions/login" + portletSettings)
+    element.setAttribute("src", engineMainUrl + "woodmall/login" + portletSettings)
     element.classList.remove("hidden");
     markButtonActive("Login");
 }
@@ -104,7 +104,7 @@ function logout() {
 
 function openRegister() {
     const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "wood_auctions/user_registration" + portletSettings);
+    element.setAttribute("src", engineMainUrl + "woodmall/user_registration" + portletSettings);
     element.classList.remove("hidden");
     markButtonActive("Register");
 }
@@ -113,13 +113,13 @@ function openMainPage() {
     const element = document.getElementById("enginePage");
     const sessionId = getSessionId();
 
-    element.setAttribute("src", engineMainUrl + "wood_auctions/main_page" + portletSettings)
+    element.setAttribute("src", engineMainUrl + "woodmall/main_page" + portletSettings)
     markButtonActive("MainPage");
 
     // if(sessionId === null) {
-    //     element.setAttribute("src", engineMainUrl + "wood_auctions/main_page?session_id=")
+    //     element.setAttribute("src", engineMainUrl + "woodmall/main_page?session_id=")
     // } else {
-    //     element.setAttribute("src", engineMainUrl + "wood_auctions/main_page?session_id="+sessionId);
+    //     element.setAttribute("src", engineMainUrl + "woodmall/main_page?session_id="+sessionId);
     // }
     element.classList.remove("hidden");
 }
@@ -134,7 +134,7 @@ function markButtonActive(elementId) {
 function openAuctionsSearch() {
 
     const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "wood_auctions/auctions_search" + portletSettings)
+    element.setAttribute("src", engineMainUrl + "woodmall/auctions_search" + portletSettings)
     element.classList.remove("hidden");
 
     markButtonActive("AuctionsPage");
@@ -142,7 +142,7 @@ function openAuctionsSearch() {
 
 function openNewAuction() {
     const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "wood_auctions/sales_offer" + portletSettings)
+    element.setAttribute("src", engineMainUrl + "woodmall/sales_offer" + portletSettings)
     element.classList.remove("hidden");
 
     markButtonActive("NewAuction");
@@ -154,7 +154,7 @@ function openMyAccountPage() {
 
     const sessionId = getSessionId();
 
-    const pageName = "wood_auctions/password_change";
+    const pageName = "woodmall/password_change";
     if(sessionId === null) {
         element.setAttribute("src", engineMainUrl + pageName+portletSettings+"?session_id=")
     } else {
