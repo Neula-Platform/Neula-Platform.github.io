@@ -155,10 +155,26 @@ function openAuctionsSearch() {
 
 function openNewAuction() {
     const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/sales_offer" + portletSettings + "?" + sessionIdParam())
+    element.setAttribute("src", engineMainUrl + "woodmall/new_auction" + portletSettings + "?" + sessionIdParam())
     element.classList.remove("hidden");
 
     markPageActive("NewAuction");
+}
+
+function openMySales() {
+    const element = document.getElementById("enginePage");
+    element.setAttribute("src", engineMainUrl + "woodmall/my_sales" + portletSettings + "?" + sessionIdParam())
+    element.classList.remove("hidden");
+
+    markPageActive("MySales");
+}
+
+function openMyPurchases() {
+    const element = document.getElementById("enginePage");
+    element.setAttribute("src", engineMainUrl + "woodmall/my_purchases" + portletSettings + "?" + sessionIdParam())
+    element.classList.remove("hidden");
+
+    markPageActive("MyPurchases");
 }
 
 function openUserContactData() {
@@ -206,6 +222,8 @@ function updateButtonsVisibility() {
     showButton("Register", !loggedIn);
     showButton("MyAccountPage", loggedIn);
     showButton("NewAuction", loggedIn);
+    showButton("MySales", loggedIn);
+    showButton("MyPurchases", loggedIn);
     showButton("userSettingsNavigation", loggedIn && isAnyUserSettingsPage());
 }
 
