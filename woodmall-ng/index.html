@@ -36,7 +36,7 @@
     <button id="MainPage" onclick="openMainPage()">Strona główna</button>
     <button id="NewsPage" disabled onclick="openNews()">Aktualności</button>
     <button id="AuctionsPage" onclick="openAuctionsSearch()">Wyszukiwarka aukcji</button>
-    <button id="MyAccountPage" onclick="openMyAccountPage()">Moje konto</button>
+    <button id="MyAccountPage" onclick="openUserContactData()">Moje konto</button>
     <button id="NewAuction" onclick="openNewAuction()">Nowa aukcja</button>
     <button id="Register" onclick="openRegister()">Zarejestruj się</button>
     <button id="Login" onclick="openLogin()">Login</button>
@@ -44,6 +44,14 @@
     <button id="PrivacyPolicyPage" disabled onclick="openPrivacyPolicyPage()">Polityka prywatności</button>
     <button style="float: right" id="Logout" onclick="logout()">Logout</button>
 </div>
+<div class="navigation" id="userSettingsNavigation">
+    <button id="UserContactData" onclick="openUserContactData()">Dane kontaktowe</button>
+    <button id="UserAddress" onclick="openUserAddress()">Mój adres</button>
+    <button id="UserPassword" onclick="openUserPassword()">Hasło</button>
+    <button id="UserAgreements" onclick="openUserAgreements()">Zgody i powiadomienia</button>
+    <button id="UserAccountManagement" onclick="openUserAccountManagement()">Zarządzanie kontem</button>
+</div>
+
 
 <iframe id="enginePage" class="hidden"></iframe>
 
