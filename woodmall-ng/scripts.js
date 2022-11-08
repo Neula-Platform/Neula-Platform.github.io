@@ -23,19 +23,19 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 function clearSessionId() {
-    sessionStorage.removeItem("sessionId");
+    localStorage.removeItem("sessionId");
     openMainPage();
     checkSession();
 }
 
 function storeSessionId(sessionId) {
-    sessionStorage.setItem("sessionId", sessionId);
+    localStorage.setItem("sessionId", sessionId);
     openMainPage();
     checkSession();
 }
 
 function getSessionId() {
-    return sessionStorage.getItem("sessionId");
+    return localStorage.getItem("sessionId");
 }
 
 
