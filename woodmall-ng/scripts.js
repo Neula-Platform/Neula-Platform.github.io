@@ -1,19 +1,10 @@
 const engineMainUrl = "screens/#/";
+// const engineMainUrl = "http://localhost:4200/#/";
 const functionsUrl = "https://woodmall.neula.cloud/api/functions/woodmall/"
 const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
 const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
 
-// function initSessionId() {
-//     let sessionId = sessionStorage.getItem("sessionId");
-//     if(sessionId === null) {
-//        // based on https://www.w3resource.com/javascript-exercises/fundamental/javascript-fundamental-exercise-253.php
-//       sessionId = ([1e7] + -1e3 + -4e3 + -8e3 + -1e11).replace(/[018]/g, c =>
-//            (c ^ (crypto.getRandomValues(new Uint8Array(1))[0] & (15 >> (c / 4)))).toString(16)
-//        );
-//       sessionStorage.setItem("sessionId", sessionId);
-//     }
-// }
-
+const history = [];
 
 let currentPage = "main";
 
@@ -84,20 +75,41 @@ function checkSession() {
 // initSessionId();
 
 function openLogin() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/login" + portletSettings)
-    element.classList.remove("hidden");
+    navigateToPage("login");
     markPageActive("Login");
+}
+
+function navigateToPage(page, params) {
+    console.log("Navigating to", page, params);
+    const element = document.getElementById("enginePage");
+    history.push([page, params]);
+    element.setAttribute("src", engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam()); // hack to ensure current screen reload
+    element.classList.remove("hidden");
+    updateButtonsVisibility();
+    window.scrollTo(0, 0);
+}
+
+function emptyIfNull(params) {
+    if(params === null || params === undefined) {
+        return "";
+    } else {
+        return params;
+    }
+}
+
+function pushOnHistory() {
+    const page = element.getAttribute("src");
+    if(page !== null && page.length > 0) {
+
+    }
 }
 
 function logout() {
     const sessionId = getSessionId();
 
     callPortalFunction("logout", {session_id: sessionId}, () => {
-        const element = document.getElementById("enginePage");
-        element.setAttribute("src", engineMainUrl + "a/b"); // hack to ensure current screen reload
+        navigateToPage("b");
         clearSessionId();
-        updateButtonsVisibility();
     }, () => {
         updateButtonsVisibility();
     });
@@ -105,25 +117,13 @@ function logout() {
 }
 
 function openRegister() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_registration" + portletSettings);
-    element.classList.remove("hidden");
+    navigateToPage("user_registration");
     markPageActive("Register");
 }
 
 function openMainPage() {
-    const element = document.getElementById("enginePage");
-    const sessionId = getSessionId();
-
-    element.setAttribute("src", engineMainUrl + "woodmall/main_page" + portletSettings)
+    navigateToPage("main_page");
     markPageActive("MainPage");
-
-    // if(sessionId === null) {
-    //     element.setAttribute("src", engineMainUrl + "woodmall/main_page?session_id=")
-    // } else {
-    //     element.setAttribute("src", engineMainUrl + "woodmall/main_page?session_id="+sessionId);
-    // }
-    element.classList.remove("hidden");
 }
 
 function sessionIdParam() {
@@ -145,70 +145,47 @@ function markPageActive(elementId) {
 }
 
 function openAuctionsSearch() {
-
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/auctions_search" + portletSettings + "?" + sessionIdParam())
-    element.classList.remove("hidden");
-
+    navigateToPage("auctions_search")
     markPageActive("AuctionsPage");
 }
 
 function openNewAuction() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/new_auction" + portletSettings + "?" + sessionIdParam())
-    element.classList.remove("hidden");
-
+    navigateToPage("new_auction")
     markPageActive("NewAuction");
 }
 
 function openMySales() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/my_sales" + portletSettings + "?" + sessionIdParam())
-    element.classList.remove("hidden");
-
+    navigateToPage("my_sales")
     markPageActive("MySales");
 }
 
 function openMyPurchases() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/my_purchases" + portletSettings + "?" + sessionIdParam())
-    element.classList.remove("hidden");
-
+    navigateToPage("my_purchases")
     markPageActive("MyPurchases");
 }
 
 function openUserContactData() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_contact_data" + portletSettings + "?" + sessionIdParam());
-    element.classList.remove("hidden");
+    navigateToPage("user_contact_data");
     markPageActive("UserContactData");
 }
 
 function openUserAddress() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_address" + portletSettings + "?" + sessionIdParam());
-    element.classList.remove("hidden");
+    navigateToPage("user_address");
     markPageActive("UserAddress");
 }
 
 function openUserPassword() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_password" + portletSettings + "?" + sessionIdParam());
-    element.classList.remove("hidden");
+    navigateToPage("user_password");
     markPageActive("UserPassword");
 }
 
 function openUserAgreements() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_agreements" + portletSettings + "?" + sessionIdParam());
-    element.classList.remove("hidden");
+    navigateToPage("user_agreements");
     markPageActive("UserAgreements");
 }
 
 function openUserAccountManagement() {
-    const element = document.getElementById("enginePage");
-    element.setAttribute("src", engineMainUrl + "woodmall/user_account_management" + portletSettings + "?" + sessionIdParam());
-    element.classList.remove("hidden");
+    navigateToPage("user_account_management");
     markPageActive("UserAccountManagement");
 }
 
@@ -228,21 +205,6 @@ function updateButtonsVisibility() {
 }
 
 
-// function openMyAccountPage() {
-//     const element = document.getElementById("enginePage");
-//     element.classList.remove("hidden");
-//
-//     const sessionId = getSessionId();
-//
-//     const pageName = "woodmall/password_change";
-//     if(sessionId === null) {
-//         element.setAttribute("src", engineMainUrl + pageName+portletSettings+"?session_id=")
-//     } else {
-//         element.setAttribute("src", engineMainUrl + pageName+portletSettings+"?session_id="+sessionId);
-//     }
-//
-//     markPageActive("MyAccountPage");
-// }
 
 function isAnyUserSettingsPage() {
     return currentPage === "UserContactData" ||
@@ -258,9 +220,28 @@ function showButton(id, visible) {
 
 
 function onScreenPortletAttributeChanged(param) {
+    console.log("Attribute changed");
+
     if (param[0] === "session_id") {
         storeSessionId(param[1]);
         console.log("Session: '" + param[1] + "'");
     }
+
+    if (param[0] === "page") {
+        if(param[1] === "$back") {
+            console.log("Navigating back");
+            if(history.length > 1) {
+                let current = history.pop();
+                let previous = history.pop();
+                navigateToPage(previous[0], previous[1]);
+            }
+
+        } else {
+            const pageAndParams = param[1].split("?");
+            navigateToPage(pageAndParams[0], pageAndParams[1]);
+        }
+    }
+
+
     updateButtonsVisibility();
 }

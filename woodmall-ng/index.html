@@ -18,6 +18,8 @@
             if (e.data.indexOf('screenPortletResize::') !== -1) {
                 const height = e.data.replace('screenPortletResize::', '');
                 document.getElementById('enginePage').style.height = height+'px';
+            } else {
+                console.log("Got message", e);
             }
 
             if(e.data.indexOf('screenPortletAttributeChanged::') !== -1) {
