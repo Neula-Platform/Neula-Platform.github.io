@@ -164,9 +164,9 @@ function openMyPurchases() {
     markPageActive("MyPurchases");
 }
 
-function openUserContactData() {
-    navigateToPage("user_contact_data");
-    markPageActive("UserContactData");
+function openUserSettings() {
+    navigateToPage("user_settings");
+    markPageActive("UserSettingsPage");
 }
 
 function openUserAddress() {
@@ -197,11 +197,10 @@ function updateButtonsVisibility() {
     showButton("Login", !loggedIn);
     showButton("Logout", loggedIn);
     showButton("Register", !loggedIn);
-    showButton("MyAccountPage", loggedIn);
+    showButton("UserSettingsPage", loggedIn);
     showButton("NewAuction", loggedIn);
     showButton("MySales", loggedIn);
     showButton("MyPurchases", loggedIn);
-    showButton("userSettingsNavigation", loggedIn && isAnyUserSettingsPage());
 }
 
 
