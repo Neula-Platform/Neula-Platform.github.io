@@ -25,6 +25,10 @@
             if(e.data.indexOf('screenPortletAttributeChanged::') !== -1) {
                 onScreenPortletAttributeChanged(JSON.parse(e.data.substring("screenPortletAttributeChanged::".length)));
             }
+
+            if(e.data === 'screenPortletLoaded') {
+                onScreenPortletLoaded();
+            }
         } ,false);
     </script>
 </head>
@@ -50,7 +54,10 @@
 </div>
 
 
-<iframe id="enginePage" class="hidden"></iframe>
+<div id="portlet">
+    <div id="preloader"><div id="preloaderBar"></div></div>
+    <iframe id="enginePage" class="hidden"></iframe>
+</div>
 
 </body>
 </html>

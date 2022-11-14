@@ -32,12 +32,49 @@ body {
     border-bottom-color: #965f33;
 }
 
+
+#portlet {
+    position: relative;
+    width: 100%;
+    max-width: 1300px;
+}
+
+#preloader {
+    width: 100%;
+    height: 2px;
+    position: absolute;
+    z-index: 1;
+    overflow: hidden;
+    display: none;
+    opacity: 0.6;
+}
+
+#preloader.visible {
+    display: block;
+}
+
+#preloaderBar {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 30%;
+    background-color: #B06E31;
+    animation-name: preloaderAnimation;
+    animation-duration: 1.5s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
+}
+
+@keyframes preloaderAnimation {
+    0%   {left: -20%}
+    100% {left: 120%}
+}
+
 iframe#enginePage {
     display: block;
     border: none;
     height: 1px;
     width: 100%;
-    max-width: 1300px;
 }
 
 iframe#enginePage.hidden {

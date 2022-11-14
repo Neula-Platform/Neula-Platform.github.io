@@ -1,5 +1,5 @@
-const engineMainUrl = "screens/#/";
-// const engineMainUrl = "http://localhost:4200/#/";
+// const engineMainUrl = "screens/#/";
+const engineMainUrl = "http://localhost:4200/#/";
 const functionsUrl = "https://woodmall.neula.cloud/api/functions/woodmall/"
 const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
 const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
@@ -80,6 +80,7 @@ function openLogin() {
 }
 
 function navigateToPage(page, params) {
+    showPreloader();
     console.log("Navigating to", page, params);
     const element = document.getElementById("enginePage");
     history.push([page, params]);
@@ -243,4 +244,22 @@ function onScreenPortletAttributeChanged(param) {
 
 
     updateButtonsVisibility();
+}
+
+function onScreenPortletLoaded() {
+    setTimeout(() => {
+        hidePreloader();
+    }, 50)
+}
+
+function hidePreloader() {
+    document.getElementById("preloader").classList.remove("visible");
+}
+
+function showPreloader() {
+    document.getElementById("preloader").classList.add("visible");
+
+    setTimeout(() => {
+        hidePreloader();
+    }, 1000);
 }
