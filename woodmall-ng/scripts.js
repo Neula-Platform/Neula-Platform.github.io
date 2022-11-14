@@ -6,7 +6,8 @@ const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
 
 const history = [];
 
-let currentPage = "main";
+let currentPage = "";
+let currentPageElementId = "MainPage";
 
 document.addEventListener("DOMContentLoaded", function () {
     updateButtonsVisibility();
@@ -80,11 +81,16 @@ function openLogin() {
 }
 
 function navigateToPage(page, params) {
-    showPreloader();
-    console.log("Navigating to", page, params);
+
     const element = document.getElementById("enginePage");
-    history.push([page, params]);
-    element.setAttribute("src", engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam()); // hack to ensure current screen reload
+    let newUrl = engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam();
+
+    if(page !== currentPage) {
+        history.push([page, params]);
+        currentPage = page;
+        showPreloader();
+        element.setAttribute("src", newUrl); // hack to ensure current screen reload
+    }
     element.classList.remove("hidden");
     updateButtonsVisibility();
 }
@@ -140,7 +146,7 @@ function markPageActive(elementId) {
         el.classList.remove('active');
     });
     document.getElementById(elementId).classList.add("active");
-    currentPage = elementId;
+    currentPageElementId = elementId;
     updateButtonsVisibility();
 }
 
@@ -206,11 +212,11 @@ function updateButtonsVisibility() {
 
 
 function isAnyUserSettingsPage() {
-    return currentPage === "UserContactData" ||
-    currentPage === "UserAddress" ||
-    currentPage === "UserPassword" ||
-    currentPage === "UserAgreements" ||
-    currentPage === "UserAccountManagement";
+    return currentPageElementId === "UserContactData" ||
+    currentPageElementId === "UserAddress" ||
+    currentPageElementId === "UserPassword" ||
+    currentPageElementId === "UserAgreements" ||
+    currentPageElementId === "UserAccountManagement";
 }
 
 function showButton(id, visible) {
