@@ -87,7 +87,6 @@ function navigateToPage(page, params) {
     element.setAttribute("src", engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam()); // hack to ensure current screen reload
     element.classList.remove("hidden");
     updateButtonsVisibility();
-    window.scrollTo(0, 0);
 }
 
 function emptyIfNull(params) {
@@ -247,6 +246,7 @@ function onScreenPortletAttributeChanged(param) {
 }
 
 function onScreenPortletLoaded() {
+    window.scrollTo(0, 0);
     setTimeout(() => {
         hidePreloader();
     }, 50)
@@ -258,8 +258,4 @@ function hidePreloader() {
 
 function showPreloader() {
     document.getElementById("preloader").classList.add("visible");
-
-    setTimeout(() => {
-        hidePreloader();
-    }, 1000);
 }
