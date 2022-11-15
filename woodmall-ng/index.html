@@ -15,21 +15,58 @@
         eventer(messageEvent,function(e) {
 
             // If the message is a resize frame request
-            if (e.data.indexOf('screenPortletResize::') !== -1) {
+            if ((typeof e.data == "string") && e.data.indexOf('screenPortletResize::') !== -1) {
                 const height = e.data.replace('screenPortletResize::', '');
                 document.getElementById('enginePage').style.height = height+'px';
             } else {
                 console.log("Got message", e);
             }
 
-            if(e.data.indexOf('screenPortletAttributeChanged::') !== -1) {
+            if((typeof e.data == "string") && e.data.indexOf('screenPortletAttributeChanged::') !== -1) {
                 onScreenPortletAttributeChanged(JSON.parse(e.data.substring("screenPortletAttributeChanged::".length)));
             }
 
-            if(e.data === 'screenPortletLoaded') {
+            if((typeof e.data == "string") && e.data === 'screenPortletLoaded') {
                 onScreenPortletLoaded();
             }
         } ,false);
+
+        function updateVisibleBoxForPortlet() {
+            const portlet = document.getElementById("enginePage");
+
+            if(portlet !== null) {
+
+                // const doc = document.documentElement;
+                // const windowLeftScroll = (window.pageXOffset || doc.scrollLeft) - (doc.clientLeft || 0);
+                // const windowTopScroll = (window.pageYOffset || doc.scrollTop) - (doc.clientTop || 0);
+
+                const windowWidth = window.innerWidth;
+                const windowHeight = window.innerHeight;
+
+                const portletSize = portlet.getBoundingClientRect();
+
+                const top = Math.min(Math.max(0, -portletSize.y), portletSize.height);
+                const bottom = portletSize.height - Math.min(Math.max(0, portletSize.bottom - windowHeight), portletSize.height);
+                const left = Math.min(Math.max(0, -portletSize.x), portletSize.width);
+                const right = portletSize.width - Math.min(Math.max(0, portletSize.right - windowWidth), portletSize.width);
+
+                portlet.contentWindow.postMessage("portletVisibleBox::"+JSON.stringify({top: top, bottom: bottom, left: left, right: right}), "*");
+            }
+
+        }
+
+        setInterval(() => {
+            updateVisibleBoxForPortlet();
+        }, 500);
+
+        addEventListener('scroll', (event) => {
+            updateVisibleBoxForPortlet();
+        });
+
+        addEventListener('resize', (event) => {
+            updateVisibleBoxForPortlet();
+        });
+
     </script>
 </head>
 <body>
