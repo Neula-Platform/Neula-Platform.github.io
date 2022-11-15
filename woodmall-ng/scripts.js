@@ -12,20 +12,20 @@ let currentPageElementId = "MainPage";
 
 document.addEventListener("DOMContentLoaded", function () {
     updateButtonsVisibility();
-    openMainPage();
+    openRecentlyAddedPage();
     checkSession();
 });
 
 
 function clearSessionId() {
     localStorage.removeItem("sessionId");
-    openMainPage();
+    openRecentlyAddedPage();
     checkSession();
 }
 
 function storeSessionId(sessionId) {
     localStorage.setItem("sessionId", sessionId);
-    openMainPage();
+    openRecentlyAddedPage();
     checkSession();
 }
 
@@ -128,9 +128,9 @@ function openRegister() {
     markPageActive("Register");
 }
 
-function openMainPage() {
-    navigateToPage("main_page");
-    markPageActive("MainPage");
+function openRecentlyAddedPage() {
+    navigateToPage("recently_added");
+    markPageActive("RecentlyAddedPage");
 }
 
 function sessionIdParam() {
