@@ -3,7 +3,7 @@ const functionsUrl = "https://woodmall.neula.cloud/api/functions/woodmall/"
 // const engineMainUrl = "http://localhost:4200/#/";
 // const functionsUrl = "http://woodmall.localhost:8080/api/functions/woodmall/"
 const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
-const portletSettings = "/n-background-color=f6f4f3/n-font-size=14";
+const portletSettings = "/n-background-color=f6f4f3/n-font-size=14/n-scroll=off";
 
 const history = [];
 
