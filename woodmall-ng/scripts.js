@@ -229,7 +229,7 @@ function showButton(id, visible) {
 function onScreenPortletAttributeChanged(param) {
     console.log("Attribute changed");
 
-    if (param[0] === "session_id") {
+    if (param[0] === "session_id" && param[1].trim().length > 0) {
         storeSessionId(param[1]);
         console.log("Session: '" + param[1] + "'");
     }
