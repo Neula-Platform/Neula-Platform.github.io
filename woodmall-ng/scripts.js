@@ -84,15 +84,22 @@ function openLogin() {
 function navigateToPage(page, params) {
 
     const element = document.getElementById("enginePage");
+    if(element !== null) {
+        element.remove();
+    }
     let newUrl = engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam();
 
     if(page !== currentPage) {
         history.push([page, params]);
         currentPage = page;
         showPreloader();
+
+        const element = document.createElement("iframe");
+        element.setAttribute("id", "enginePage");
         element.setAttribute("src", newUrl); // hack to ensure current screen reload
+        document.getElementById("portlet").appendChild(element);
     }
-    element.classList.remove("hidden");
+    // element.classList.remove("hidden");
     updateButtonsVisibility();
 }
 

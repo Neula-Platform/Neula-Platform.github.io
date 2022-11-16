@@ -17,7 +17,10 @@
             // If the message is a resize frame request
             if ((typeof e.data == "string") && e.data.indexOf('screenPortletResize::') !== -1) {
                 const height = e.data.replace('screenPortletResize::', '');
-                document.getElementById('enginePage').style.height = height+'px';
+                let frame = document.getElementById('enginePage');
+                if(frame !== null) {
+                    frame.style.height = height + 'px';
+                }
             } else {
                 console.log("Got message", e);
             }
