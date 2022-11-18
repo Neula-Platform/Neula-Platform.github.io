@@ -7,7 +7,8 @@ const portletSettings = "/n-background-color=f6f4f3/n-font-size=14/n-scroll=off"
 
 const history = [];
 
-let currentPage = "";
+let currentPage = null;
+let currentParams = null;
 let currentPageElementId = "MainPage";
 
 document.addEventListener("DOMContentLoaded", function () {
@@ -81,16 +82,21 @@ function openLogin() {
     markPageActive("Login");
 }
 
-function navigateToPage(page, params) {
+function navigateToPage(page, params, noHistory) {
 
     const element = document.getElementById("enginePage");
     let newUrl = engineMainUrl + "woodmall/" + page + portletSettings + "?" + emptyIfNull(params) +"&"+sessionIdParam();
 
     if(page !== currentPage) {
-        history.push([page, params]);
+        if(currentPage !== null && noHistory !== true) {
+            history.push({page: currentPage, params: currentParams});
+            console.log("New history", history.map(h => h.page).join(" -> "));
+        }
         currentPage = page;
+        currentParams = params;
         showPreloader();
-        element.setAttribute("src", newUrl); // hack to ensure current screen reload
+        element.contentWindow.location.replace(newUrl);
+        // element.setAttribute("src", newUrl);
     }
     element.classList.remove("hidden");
     updateButtonsVisibility();
@@ -102,13 +108,6 @@ function emptyIfNull(params) {
         return "";
     } else {
         return params;
-    }
-}
-
-function pushOnHistory() {
-    const page = element.getAttribute("src");
-    if(page !== null && page.length > 0) {
-
     }
 }
 
@@ -236,11 +235,11 @@ function onScreenPortletAttributeChanged(param) {
 
     if (param[0] === "page") {
         if(param[1] === "$back") {
-            console.log("Navigating back");
+            console.log("History Navigating back");
             if(history.length > 1) {
-                let current = history.pop();
                 let previous = history.pop();
-                navigateToPage(previous[0], previous[1]);
+                console.log("New history (popped)", history.map(h => h.page).join(" -> "));
+                navigateToPage(previous.page, previous.params, true);
             }
 
         } else {
@@ -266,4 +265,8 @@ function hidePreloader() {
 
 function showPreloader() {
     document.getElementById("preloader").classList.add("visible");
+}
+
+window.onpopstate = function(event) {
+    alert("History location: " + document.location);
 }
