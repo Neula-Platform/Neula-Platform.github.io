@@ -1,5 +1,5 @@
 {
-  "screen_main_panel": "Panel główny",
+  "screen_main_screen": "Ekran",
   "screen_Properties": "Właściwości ekranu",
   "screen_Section": "Sekcja",
   "screen_Repeatable": "Sekcja powtarzalna",
@@ -10,6 +10,7 @@
   "screen_active_tab_properties": "Wybrana zakładka",
   "screen_css_class": "Klasa CSS",
   "screen_custom_css": "Własny CSS",
+  "screen_property_icon_background_color": "Kolor tła ikony",
   "screen_look_and_feel_class": "Klasa wyglądu komponentu",
   "screen_group_basic": "Podstawowe",
   "screen_group_organization": "Organizacja",
@@ -65,11 +66,11 @@
   "screen_header_visible": "Nagłówek widoczny",
   "screen_identifier": "Identyfikator",
   "screen_visible": "Widoczny",
-  "screen_enabled": "Włączony",
+  "screen_uncovered": "Pokazany",
   "screen_required": "Wymagane",
   "screen_editable": "Edytowalny",
   "screen_visible_ref": "Widoczny Ref",
-  "screen_enabled_ref": "Włączony Ref",
+  "screen_uncovered_ref": "Pokazany Ref",
   "screen_required_ref": "Wymagane Ref",
   "screen_editable_ref": "Edytowalny Ref",
   "screen_button_active": "Aktywny",
@@ -162,7 +163,7 @@
   "screen_multiline": "Wiele linii",
   "screen_negative_color": "Kolor dla wartości ujemnych",
   "screen_font_size": "Rozmiar tekstu",
-  "screen_font_color": "Color tekstu",
+  "screen_font_color": "Kolor tekstu",
   "screen_font_family": "Czcionka",
   "screen_static_position": "Pozycja statyczna",
   "screen_margin": "Margines",
@@ -261,6 +262,7 @@
 
   "screen_current_screen": "Obecny ekran",
 
+  "screen_component_origin_removed": "Ekran źródłowy został usunięty",
   "screen_component_removed_from_origin": "Komponent został usunięty z ekranu źródłowego",
 
   "screen_debug_title": "Screen debug information",
@@ -277,5 +279,10 @@
   "screen_debug_evaluator_custom_context": "Wybrany kontekst",
   "screen_debug_evaluator_custom_context_example": "Ścieżka do wybranego kontekstu, np. klienci[2]",
   "screen_debug_evaluator_in_context": "w kontekście",
-  "screen_debug_evaluator_button_save": "Zapisz"
+  "screen_debug_evaluator_button_save": "Zapisz",
+
+  "screen_property_knob_color": "Kolor uchwytu",
+  "screen_property_yes_background_color": "Kolor tła 'Tak'",
+  "screen_property_no_background_color": "Kolor tła 'Nie'",
+  "screen_property_no_text_color": "Kolor tekstu 'Nie'"
 }

@@ -1,5 +1,5 @@
 {
-  "screen_main_panel": "Main panel",
+  "screen_main_screen": "Screen",
   "screen_Properties": "Screen properties",
   "screen_Section": "Section",
   "screen_Repeatable": "Repeatable Section",
@@ -10,6 +10,7 @@
   "screen_active_tab_properties": "Active tab",
   "screen_css_class": "CSS Class",
   "screen_custom_css": "Custom CSS",
+  "screen_property_icon_background_color": "Icon background color",
   "screen_look_and_feel_class": "Component Look & Feel Class",
   "screen_group_basic": "Basic",
   "screen_group_organization": "Organization",
@@ -65,11 +66,11 @@
   "screen_header_visible": "Header visible",
   "screen_identifier": "Identifier",
   "screen_visible": "Visible",
-  "screen_enabled": "Enabled",
+  "screen_uncovered": "Uncovered",
   "screen_required": "Required",
   "screen_editable": "Editable",
   "screen_visible_ref": "Visible Ref",
-  "screen_enabled_ref": "Enabled Ref",
+  "screen_uncovered_ref": "Uncovered Ref",
   "screen_required_ref": "Required Ref",
   "screen_editable_ref": "Editable Ref",
   "screen_button_active": "Active",
@@ -269,7 +270,7 @@
   "screen_component_reference": "Component references",
 
   "screen_current_screen": "Current screen",
-
+  "screen_component_origin_removed": "Origin screen has been removed",
   "screen_component_removed_from_origin": "Component has been removed from origin screen",
 
   "screen_debug_title": "Screen debug information",
@@ -286,5 +287,10 @@
   "screen_debug_evaluator_custom_context": "Custom context",
   "screen_debug_evaluator_custom_context_example": "Custom context path, e.g. clients[2]",
   "screen_debug_evaluator_in_context": "in context",
-  "screen_debug_evaluator_button_save": "Save"
+  "screen_debug_evaluator_button_save": "Save",
+
+  "screen_property_knob_color": "Knob color",
+  "screen_property_yes_background_color": "'Yes' background color",
+  "screen_property_no_background_color": "'No' background color",
+  "screen_property_no_text_color": "'No' text color"
 }

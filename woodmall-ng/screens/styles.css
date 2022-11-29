@@ -1087,12 +1087,12 @@ ul.nav {
   border-color: #f49c14;
 }
 .btn.btn-primary {
-  background-color: #20b599;
-  border-color: #20b599;
+  background-color: #a76e41;
+  border-color: #a76e41;
 }
 .btn.btn-primary.active {
-  background-color: #148e77;
-  border-color: #148e77;
+  background-color: #87552e;
+  border-color: #87552e;
 }
 body {
   color: #4e4e50;
@@ -1215,7 +1215,7 @@ my-toastr-overlay .toastr .closeToastr i {
   filter: grayscale(1);
 }
 .screenInstance .ButtonComponent:disabled {
-  cursor: default;
+  cursor: inherit;
   opacity: 0.8;
   filter: grayscale(0.4);
 }
@@ -1251,6 +1251,15 @@ my-toastr-overlay .toastr .closeToastr i {
 .screenInstance .NumberInputComponent {
   position: relative;
 }
+.screenInstance .NumberInputComponent.preview .input {
+  width: -moz-fit-content;
+  width: fit-content;
+  flex-grow: 0;
+  padding-right: 0.4rem !important;
+}
+.screenInstance .NumberInputComponent.preview .unitName {
+  position: relative;
+}
 .screenInstance .NumberInputComponent.validationError .input {
   border-color: #ED5565 !important;
   color: #ED5565 !important;
@@ -1266,7 +1275,7 @@ my-toastr-overlay .toastr .closeToastr i {
   box-shadow: inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.05);
 }
 .screenInstance .NumberInputComponent input.input.changed1, .screenInstance .NumberInputComponent textarea.input.changed1 {
-  background-color: #81cfc0 !important;
+  background-color: #c0afa2 !important;
   transition: background-color 0.2s;
 }
 .screenInstance .NumberInputComponent input.input.changed2, .screenInstance .NumberInputComponent textarea.input.changed2 {
@@ -1374,7 +1383,7 @@ my-toastr-overlay .toastr .closeToastr i {
   color: #ED5565 !important;
 }
 .screenInstance .DropListComponent.focused .dropListValue {
-  border: 1px solid #17a086 !important;
+  border: 1px solid #965f33 !important;
 }
 .screenInstance .DropListComponent .dropListValue {
   border: 1px solid #e2e8e5;
@@ -1388,7 +1397,7 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .DropListComponent .dropListValue.disabled {
   background-color: #fbfbfa;
-  cursor: default;
+  cursor: inferit;
   box-shadow: none;
 }
 .screenInstance .DropListComponent .dropListValue.notSelected {
@@ -1470,14 +1479,14 @@ my-toastr-overlay .toastr .closeToastr i {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #1ab699;
+  background-color: #a96b39;
   opacity: 0.3;
   pointer-events: none;
 }
 .screenInstance .SingleAttachmentInputComponent .fileUploadDisplay .dropAreaGlass {
   display: none;
-  border: 2px dashed #67e9d0;
-  background: rgba(103, 233, 208, 0.04);
+  border: 2px dashed #d7ad8b;
+  background: rgba(215, 173, 139, 0.04);
   position: absolute;
   top: -0.3rem;
   left: -0.35rem;
@@ -1488,7 +1497,7 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .SingleAttachmentInputComponent .fileUploadDisplay .dropAreaGlass .dropInstruction {
   font-size: 2rem;
-  color: #17a086;
+  color: #965f33;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1499,7 +1508,7 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .SingleAttachmentInputComponent .fileUploadDisplay.fileDragged .dropAreaGlass {
   display: block;
-  background: rgba(103, 233, 208, 0.1);
+  background: rgba(215, 173, 139, 0.1);
 }
 .screenInstance .SingleAttachmentInputComponent .uploadSection .uploadButton {
   position: absolute;
@@ -1561,8 +1570,8 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .MultiAttachmentInputComponent .fileUploadDisplay .dropAreaGlass {
   display: none;
-  border: 2px dashed #67e9d0;
-  background: rgba(103, 233, 208, 0.04);
+  border: 2px dashed #d7ad8b;
+  background: rgba(215, 173, 139, 0.04);
   position: absolute;
   top: -0.3rem;
   left: -0.35rem;
@@ -1573,7 +1582,7 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .MultiAttachmentInputComponent .fileUploadDisplay .dropAreaGlass .dropInstruction {
   font-size: 2rem;
-  color: #17a086;
+  color: #965f33;
   position: absolute;
   left: 50%;
   top: 50%;
@@ -1584,7 +1593,7 @@ my-toastr-overlay .toastr .closeToastr i {
   top: 0;
   left: 0;
   bottom: 0;
-  background-color: #1ab699;
+  background-color: #a96b39;
   opacity: 0.3;
   pointer-events: none;
 }
@@ -1593,7 +1602,7 @@ my-toastr-overlay .toastr .closeToastr i {
 }
 .screenInstance .MultiAttachmentInputComponent .fileUploadDisplay.fileDragged .dropAreaGlass {
   display: block;
-  background: rgba(103, 233, 208, 0.1);
+  background: rgba(215, 173, 139, 0.1);
 }
 .screenInstance .MultiAttachmentInputComponent .filesContainer .fileInfo .fileName:hover .nameOnly, .screenInstance .MultiAttachmentInputComponent .filesContainer .fileInfo .fileName:active .nameOnly, .screenInstance .MultiAttachmentInputComponent .filesContainer .fileInfo .fileName:focus .nameOnly {
   text-decoration: underline;
@@ -1884,17 +1893,17 @@ my-toastr-overlay .toastr .closeToastr i {
   margin-right: 0;
 }
 .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry:active, .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry:focus, .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry:hover {
-  color: #30b59c;
+  color: #a37754;
 }
 .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry:active, .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry:hover {
   transition: background 0.5s;
   background-color: rgba(0, 0, 0, 0.05);
 }
 .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry.active {
-  color: #30b59c;
+  color: #a37754;
 }
 .screenInstance my-tabs-container .TabsContainer .tabsList .tabEntry.active span {
-  border-color: #30b59c;
+  border-color: #a37754;
 }
 .screenInstance my-tabs-container .TabsContainer .tabContent {
   display: block;
@@ -1917,19 +1926,19 @@ my-toastr-overlay .toastr .closeToastr i {
   width: min-content;
   height: min-content;
   pointer-events: none;
-  background-color: rgba(23, 160, 134, 0);
+  background-color: rgba(150, 95, 51, 0);
   animation: blink 1.3s;
   animation-iteration-count: infinite;
 }
 @keyframes blink {
   0% {
-    background-color: rgba(23, 160, 134, 0);
+    background-color: rgba(150, 95, 51, 0);
   }
   40% {
-    background-color: rgba(23, 160, 134, 0);
+    background-color: rgba(150, 95, 51, 0);
   }
   70% {
-    background-color: rgba(23, 160, 134, 0.2);
+    background-color: rgba(150, 95, 51, 0.2);
   }
 }
 .screenInstance .ViewComponent .errorsInfo {
@@ -2038,21 +2047,24 @@ my-toastr-overlay .toastr .closeToastr i {
   display: flex;
   flex-direction: row;
   flex-wrap: nowrap;
+  border: 1px solid #e2e8e5;
+  border-radius: 0.3rem;
 }
 .view .DateInputCommon .input {
   display: block;
   width: 1px;
   flex-grow: 1;
-  padding: 0.5em 0.3rem;
+  padding: 0.7rem 0.3rem 0.5rem;
   box-shadow: inset 0 0.1rem 0.3rem rgba(0, 0, 0, 0.05);
-  border-radius: 0.3rem;
   background-color: white;
-  outline: 0;
-  border: 1px solid #e2e8e5;
+  outline: 1px solid transparent;
+  outline-offset: -1px;
+  border: 0;
+  border-radius: 0.3rem;
 }
 .view .DateInputCommon .input:focus {
-  transition: border-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, background-color 0.2s;
-  border-color: #20b599;
+  transition: outline-color 0.15s ease-in-out 0s, box-shadow 0.15s ease-in-out 0s, background-color 0.2s;
+  outline-color: #20b599;
 }
 .view .DateInputCommon.disabled {
   border: 1px solid #f0f0f0;
@@ -2060,7 +2072,7 @@ my-toastr-overlay .toastr .closeToastr i {
 .view .DateInputCommon.disabled .input {
   background-color: #fcfcfc;
   box-shadow: none;
-  cursor: default;
+  cursor: inherit;
 }
 .view .DateInputCommon.preview {
   border-color: transparent;
@@ -2072,6 +2084,8 @@ my-toastr-overlay .toastr .closeToastr i {
 .view .DateInputCommon.preview .inputHeader {
   border-color: transparent;
   background-color: transparent;
+  padding-left: 0.3rem;
+  width: 1.85rem;
 }
 .view .DateInputCommon .inputHeader {
   border-right: 1px solid #e2e8e5;
@@ -2080,10 +2094,6 @@ my-toastr-overlay .toastr .closeToastr i {
   padding: 0.45rem 0.85rem 0.45rem 0.85rem;
   display: inline-block;
   height: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
   width: 3rem;
   border-radius: inherit;
 }
@@ -2264,9 +2274,6 @@ my-toastr-overlay .toastr .closeToastr i {
   min-height: 2em;
   min-width: 2em;
 }
-.view .RadioButtonComponent .radioEntry .radioButtonSvg .outsideCircle {
-  fill: #eeeeee !important;
-}
 .view .RadioButtonComponent .radioEntry .radioButtonSvg {
   position: absolute;
   top: 0.5rem;
@@ -2294,10 +2301,10 @@ my-toastr-overlay .toastr .closeToastr i {
   text-align: left;
 }
 .view .RadioButtonComponent .radioEntry.checked .radioButtonSvg .outsideCircle {
-  fill: #a8a8aa !important;
+  fill: #a8a8aa;
 }
 .view .RadioButtonComponent .radioEntry.checked .radioButtonSvg .path {
-  fill: #9a9a9d !important;
+  fill: #9a9a9d;
 }
 .view .RadioButtonComponent .radioEntry.checked .radioButtonSvg .insideCircle {
   visibility: visible;
@@ -2316,37 +2323,37 @@ my-toastr-overlay .toastr .closeToastr i {
   cursor: pointer;
 }
 .view .RadioButtonComponent.enabled .radioEntry:focus .radioButtonSvg .path {
-  fill: #bbb !important;
+  fill: #bbb;
 }
 .view .RadioButtonComponent.enabled .radioEntry:focus .radioButtonLabel {
   color: #6f6f72;
 }
 .view .RadioButtonComponent.enabled .radioEntry:hover .radioButtonSvg .path {
-  fill: #bbb !important;
+  fill: #bbb;
 }
 .view .RadioButtonComponent.enabled .radioEntry:hover .radioButtonLabel {
   color: #6f6f72;
 }
 .view .RadioButtonComponent.enabled .radioEntry .radioButtonSvg .outsideCircle {
-  fill: #fff !important;
+  fill: #fff;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked .radioButtonSvg .outsideCircle {
-  fill: #17a086 !important;
+  fill: #a76e41;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked .radioButtonSvg .path {
-  fill: #148a73 !important;
+  fill: #a76e41;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked:focus .radioButtonSvg .path {
-  fill: #777 !important;
+  fill: #777;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked:focus .radioButtonLabel {
-  color: #000000;
+  color: #4e4e50;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked:hover .radioButtonSvg .path {
-  fill: #777 !important;
+  fill: #777;
 }
 .view .RadioButtonComponent.enabled .radioEntry.checked:hover .radioButtonLabel {
-  color: #000000;
+  color: #4e4e50;
 }
 .view .MultiCheckboxComponent .checkboxEntry {
   display: block;
@@ -2358,14 +2365,11 @@ my-toastr-overlay .toastr .closeToastr i {
   border: none;
   padding: 0.5em 0 0.2em 0;
 }
-.view .MultiCheckboxComponent .checkboxEntry .checkBoxSvg .box {
-  fill: #eee !important;
-}
 .view .MultiCheckboxComponent .checkboxEntry.checked .checkBoxSvg .box {
-  fill: #a8a8aa !important;
+  fill: #a8a8aa;
 }
 .view .MultiCheckboxComponent .checkboxEntry.checked .checkBoxSvg .background {
-  fill: #9a9a9d !important;
+  fill: #9a9a9d;
 }
 .view .MultiCheckboxComponent .checkboxEntry.checked .checkBoxSvg .ticker {
   visibility: visible;
@@ -2373,7 +2377,7 @@ my-toastr-overlay .toastr .closeToastr i {
   stroke: #fff !important;
   stroke-miterlimit: 10;
 }
-.view .MultiCheckboxComponent .checkboxEntry.checked .my-checkbox-label {
+.view .MultiCheckboxComponent .checkboxEntry.checked .checkboxLabel {
   color: #4e4e50;
 }
 .view .MultiCheckboxComponent .checkboxEntry .checkBoxSvg {
@@ -2386,7 +2390,7 @@ my-toastr-overlay .toastr .closeToastr i {
   vertical-align: middle;
 }
 .view .MultiCheckboxComponent .checkboxEntry .checkBoxSvg .box {
-  fill: #fff;
+  fill: #eee;
 }
 .view .MultiCheckboxComponent .checkboxEntry .checkBoxSvg .background {
   fill: #dee1e3;
@@ -2406,49 +2410,49 @@ my-toastr-overlay .toastr .closeToastr i {
   cursor: pointer;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry:focus .checkBoxSvg .background {
-  fill: #bbb !important;
+  fill: #bbb;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry:focus .my-checkbox-label {
+.view .MultiCheckboxComponent.enabled .checkboxEntry:focus .checkboxLabel {
   color: #6f6f72;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry:hover .checkBoxSvg .background {
-  fill: #bbb !important;
+  fill: #bbb;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry:hover .my-checkbox-label {
+.view .MultiCheckboxComponent.enabled .checkboxEntry:hover .checkboxLabel {
   color: #6f6f72;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry:focus .checkBoxSvg .background {
-  fill: #20b599 !important;
+  fill: #a76e41;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry:focus .my-checkbox-label {
+.view .MultiCheckboxComponent.enabled .checkboxEntry:focus .checkboxLabel {
   color: #6f6f72;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry .checkBoxSvg .box {
-  fill: #fff !important;
+  fill: #fff;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry.checked .checkBoxSvg .box {
-  fill: #20b599 !important;
+  fill: #a76e41;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry.checked .checkBoxSvg .background {
-  fill: #148a73 !important;
+  fill: #a76e41;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry.checked:hover .checkBoxSvg .background {
-  fill: #777 !important;
+  fill: #777;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry.checked:hover .my-checkbox-label {
-  color: #000000;
+.view .MultiCheckboxComponent.enabled .checkboxEntry.checked:hover .checkboxLabel {
+  color: #4e4e50;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry.checked:focus .checkBoxSvg .background {
-  fill: #777 !important;
+  fill: #777;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry.checked:focus .my-checkbox-label {
-  color: #000000;
+.view .MultiCheckboxComponent.enabled .checkboxEntry.checked:focus .checkboxLabel {
+  color: #4e4e50;
 }
 .view .MultiCheckboxComponent.enabled .checkboxEntry.invalid .checkBoxSvg .background {
   fill: #ED5565 !important;
 }
-.view .MultiCheckboxComponent.enabled .checkboxEntry.invalid .my-checkbox-label {
-  color: #ED5565;
+.view .MultiCheckboxComponent.enabled .checkboxEntry.invalid .checkboxLabel {
+  color: #ED5565 !important;
 }
 .view .SingleCheckboxComponent .checkboxEntry {
   display: block;
@@ -2460,14 +2464,11 @@ my-toastr-overlay .toastr .closeToastr i {
   border: none;
   padding: 0.5em 0 0.2em 0;
 }
-.view .SingleCheckboxComponent .checkboxEntry .checkBoxSvg .box {
-  fill: #eee !important;
-}
 .view .SingleCheckboxComponent .checkboxEntry.checked .checkBoxSvg .box {
-  fill: #a8a8aa !important;
+  fill: #a8a8aa;
 }
 .view .SingleCheckboxComponent .checkboxEntry.checked .checkBoxSvg .background {
-  fill: #9a9a9d !important;
+  fill: #9a9a9d;
 }
 .view .SingleCheckboxComponent .checkboxEntry.checked .checkBoxSvg .ticker {
   visibility: visible;
@@ -2475,7 +2476,7 @@ my-toastr-overlay .toastr .closeToastr i {
   stroke: #fff !important;
   stroke-miterlimit: 10;
 }
-.view .SingleCheckboxComponent .checkboxEntry.checked .my-checkbox-label {
+.view .SingleCheckboxComponent .checkboxEntry.checked .checkboxLabel {
   color: #4e4e50;
 }
 .view .SingleCheckboxComponent .checkboxEntry .checkBoxSvg {
@@ -2488,7 +2489,7 @@ my-toastr-overlay .toastr .closeToastr i {
   vertical-align: middle;
 }
 .view .SingleCheckboxComponent .checkboxEntry .checkBoxSvg .box {
-  fill: #fff;
+  fill: #eee;
 }
 .view .SingleCheckboxComponent .checkboxEntry .checkBoxSvg .background {
   fill: #dee1e3;
@@ -2511,48 +2512,48 @@ my-toastr-overlay .toastr .closeToastr i {
   cursor: pointer;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry:focus .checkBoxSvg .background {
-  fill: #bbb !important;
+  fill: #bbb;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry:focus .my-checkbox-label {
+.view .SingleCheckboxComponent.enabled .checkboxEntry:focus .checkboxLabel {
   color: #6f6f72;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry:hover .checkBoxSvg .background {
-  fill: #bbb !important;
+  fill: #bbb;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry:hover .my-checkbox-label {
+.view .SingleCheckboxComponent.enabled .checkboxEntry:hover .checkboxLabel {
   color: #6f6f72;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry:focus .checkBoxSvg .background {
-  fill: #20b599 !important;
+  fill: #a76e41;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry:focus .my-checkbox-label {
+.view .SingleCheckboxComponent.enabled .checkboxEntry:focus .checkboxLabel {
   color: #6f6f72;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry .checkBoxSvg .box {
-  fill: #fff !important;
+  fill: #fff;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry.checked .checkBoxSvg .box {
-  fill: #20b599 !important;
+  fill: #a76e41;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry.checked .checkBoxSvg .background {
-  fill: #148a73 !important;
+  fill: #a76e41;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry.checked:hover .checkBoxSvg .background {
-  fill: #777 !important;
+  fill: #777;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry.checked:hover .my-checkbox-label {
-  color: #000000;
+.view .SingleCheckboxComponent.enabled .checkboxEntry.checked:hover .checkboxLabel {
+  color: #4e4e50;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry.checked:focus .checkBoxSvg .background {
-  fill: #777 !important;
+  fill: #777;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry.checked:focus .my-checkbox-label {
-  color: #000000;
+.view .SingleCheckboxComponent.enabled .checkboxEntry.checked:focus .checkboxLabel {
+  color: #4e4e50;
 }
 .view .SingleCheckboxComponent.enabled .checkboxEntry.unknown .checkBoxSvg .unknown {
   visibility: visible;
   stroke-miterlimit: 10;
-  fill: #ccc !important;
+  fill: #ccc;
   stroke: white;
   font-size: 11px;
   stroke-width: 0.5px;
@@ -2560,8 +2561,8 @@ my-toastr-overlay .toastr .closeToastr i {
 .view .SingleCheckboxComponent.enabled .checkboxEntry.invalid .checkBoxSvg .background {
   fill: #ED5565 !important;
 }
-.view .SingleCheckboxComponent.enabled .checkboxEntry.invalid .my-checkbox-label {
-  color: #ED5565;
+.view .SingleCheckboxComponent.enabled .checkboxEntry.invalid .checkboxLabel {
+  color: #ED5565 !important;
 }
 .view .ButtonComponent {
   text-align: center;
@@ -2679,7 +2680,7 @@ my-toastr-overlay .toastr .closeToastr i {
   align-items: start;
 }
 .view .LinkComponent .linkContent {
-  color: #30b59c;
+  color: #a37754;
 }
 .view .screenComponentLabel {
   display: flex;
@@ -2725,6 +2726,7 @@ my-toastr-overlay .toastr .closeToastr i {
 .view .SwitchComponent {
   position: relative;
   min-height: 3rem;
+  color: white;
 }
 .view .SwitchComponent .slider {
   position: absolute;
@@ -2735,10 +2737,13 @@ my-toastr-overlay .toastr .closeToastr i {
   bottom: 0.4rem;
   background-color: #ccc;
   transition: 0.4s;
-  border-radius: 3rem;
+  border-radius: 10rem;
   -webkit-user-select: none;
           user-select: none;
-  color: white;
+  border: none;
+}
+.view .SwitchComponent .slider:focus {
+  outline: 1px solid #20b599 !important;
 }
 .view .SwitchComponent .slider .circle {
   position: absolute;
@@ -2750,7 +2755,7 @@ my-toastr-overlay .toastr .closeToastr i {
   border-radius: 50%;
   transform: translate(-50%, -50%);
   display: inline-block;
-  height: 72%;
+  height: 62%;
 }
 .view .SwitchComponent .slider .circle img {
   height: 100%;
@@ -2774,7 +2779,7 @@ my-toastr-overlay .toastr .closeToastr i {
   background-color: #ED5565;
 }
 .view .SwitchComponent .slider.deny .circle {
-  transform: translate(20%, -50%);
+  transform: translate(31%, -50%);
   left: 0;
 }
 .view .SwitchComponent .slider.deny .noLabel {
@@ -2787,7 +2792,7 @@ my-toastr-overlay .toastr .closeToastr i {
   background-color: #1bba9a;
 }
 .view .SwitchComponent .slider.confirm .circle {
-  transform: translate(-120%, -50%);
+  transform: translate(-131%, -50%);
   left: 100%;
 }
 .view .SwitchComponent .slider.confirm .yesLabel {
@@ -3399,7 +3404,7 @@ my-toastr-overlay .toastr .closeToastr i {
   border-color: transparent;
 }
 .view .TabsContainer > .tabsHeader .tabHeader.selected {
-  border-bottom: 2px solid #17a086;
+  border-bottom: 2px solid #965f33;
 }
 .view .TabsContainer > .tabsHeader .tabHeader.disabled {
   opacity: 0.5;
@@ -3409,7 +3414,7 @@ my-toastr-overlay .toastr .closeToastr i {
   cursor: default;
 }
 .view .TabsContainer > .tabsHeader .tabHeader:hover:not(.disabled), .view .TabsContainer > .tabsHeader .tabHeader:active:not(.disabled), .view .TabsContainer > .tabsHeader .tabHeader:focus:not(.disabled) {
-  color: #30b59c;
+  color: #a37754;
 }
 .view .TabsContainer > .tabsHeader .tabHeader .tab {
   background-color: transparent;
@@ -3771,7 +3776,7 @@ my-toastr-overlay .toastr .closeToastr i {
   background-color: #f7f8f9;
 }
 .dropListPopup .options .option.active {
-  background-color: #17a086;
+  background-color: #965f33;
   color: white;
 }
 .dateInputPopup {
@@ -3848,7 +3853,7 @@ my-toastr-overlay .toastr .closeToastr i {
   color: #8d8d90;
 }
 .dateInputPopup > .calendar > .calendarContent > .weeksContent > .week > .dayButton.selected {
-  background-color: #17a086;
+  background-color: #965f33;
   color: white;
 }
 #drop-menu-overlay {
