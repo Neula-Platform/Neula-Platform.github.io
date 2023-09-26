@@ -3,7 +3,8 @@ const engineMainUrl = "screens/#/";
 const functionsUrl = "https://woodmalltest.neula.cloud/api/functions/woodmall/"
 // const engineMainUrl = "http://localhost:4200/#/";
 // const functionsUrl = "http://woodmall.localhost:8080/api/functions/woodmall/"
-const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
+// const notSecretToken = "5c7285017643837e7b4eb4c60a23ae404f20d6b1ebefaffa4a722a98d06def176730";
+const notSecretToken = "ebd7b0f111d250f5f7707690185d80e65d97ea45b66a9742cb5de92dc9bb037c5586";
 const portletSettings = "/n-background-color=f6f4f3/n-font-size=14/n-scroll=off";
 
 const history = [];
